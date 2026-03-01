@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1600"
+   LastUpgradeVersion = "1430"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
-      buildArchitectures = "Automatic">
+      runPostActionsOnFailure = "NO">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -15,9 +15,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3C86E9A30F34487BBE7EA728"
+               BlueprintIdentifier = "3B60F5E235D5C5B5D77396B0"
                BuildableName = "FocusLock.app"
                BlueprintName = "FocusLock"
+               ReferencedContainer = "container:FocusLock.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9CB6C014424519326CD43E46"
+               BuildableName = "FocusLockUITests.xctest"
+               BlueprintName = "FocusLockUITests"
                ReferencedContainer = "container:FocusLock.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,7 +42,31 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      shouldAutocreateTestPlan = "YES">
+      onlyGenerateCoverageForSpecifiedTargets = "NO">
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "3B60F5E235D5C5B5D77396B0"
+            BuildableName = "FocusLock.app"
+            BlueprintName = "FocusLock"
+            ReferencedContainer = "container:FocusLock.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9CB6C014424519326CD43E46"
+               BuildableName = "FocusLockUITests.xctest"
+               BlueprintName = "FocusLockUITests"
+               ReferencedContainer = "container:FocusLock.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+      </Testables>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -44,7 +82,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C86E9A30F34487BBE7EA728"
+            BlueprintIdentifier = "3B60F5E235D5C5B5D77396B0"
             BuildableName = "FocusLock.app"
             BlueprintName = "FocusLock"
             ReferencedContainer = "container:FocusLock.xcodeproj">
@@ -61,13 +99,16 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3C86E9A30F34487BBE7EA728"
+            BlueprintIdentifier = "3B60F5E235D5C5B5D77396B0"
             BuildableName = "FocusLock.app"
             BlueprintName = "FocusLock"
             ReferencedContainer = "container:FocusLock.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
+   <AnalyzeAction
+      buildConfiguration = "Debug">
+   </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
       revealArchiveInOrganizer = "YES">

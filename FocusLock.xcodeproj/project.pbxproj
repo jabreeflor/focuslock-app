@@ -3,445 +3,601 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2E9886C0CA6C88EC38A22FA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C17A0125F11601DC0B626 /* ContentView.swift */; };
-		D914106E66AD1C9DDCE8D9CA /* FocusLockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D7103CF9664BE09319AF6 /* FocusLockApp.swift */; };
-		FBE35E2A277E701C4C7512BE /* ActiveLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA68D050580CA3E757FB473 /* ActiveLockView.swift */; };
-		2C32354A39153864E3A2B1BC /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135879FE374D8C16EF638C71 /* ChallengeView.swift */; };
-		951A1F307BB7426BB105B5E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1BC6A85269EFC498A754DA /* HomeView.swift */; };
-		C3EDB6847D11A21B7C7C8CD1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B750002DDE6B86C81863B4D /* OnboardingView.swift */; };
-		F857D05ADD74E8472C0A2231 /* ScheduleCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A3F6CED8F7808C7741640 /* ScheduleCreatorView.swift */; };
-		45BA4EF8E80474F7A7425CFA /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20826D1906B46EE0C0B476D /* ScheduleListView.swift */; };
-		D365DA76F320A17BB7FBE6E6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A5240462BA3E201902F6A /* SettingsView.swift */; };
-		2813B546DB40D8BD80D23F34 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8330E312652270463151A7F /* StatsView.swift */; };
-		E043860448BEC13E716F1A54 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CC262F34FE0F0565FD82CE /* Challenge.swift */; };
-		68838723269F714165C0EE5D /* ChallengeAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47571B976D63B25F9CC53708 /* ChallengeAttempt.swift */; };
-		0DDF92F537292191553288AC /* FocusSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2BD3F402605FDFD2B9A8B /* FocusSchedule.swift */; };
-		6241B323C9C24CDE7C4BAF4C /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F1F0ED5FA8780DD349AFD /* FocusSession.swift */; };
-		8DC9433E1C0CFEEDB5EA5AB3 /* ChallengeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8528C6B7847080E48817FBF /* ChallengeEngine.swift */; };
-		12AADDAA4ECCA04FA61BF494 /* ScreenTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398FDECC72EA4BB913EDAB74 /* ScreenTimeService.swift */; };
-		61B8DD334E4ECCF50A9A1DC0 /* NetworkLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587FB4F52B1450101240972 /* NetworkLinesView.swift */; };
-		88E32D875C36AED6211D5421 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96949EDA67F00089313ED281 /* SharedComponents.swift */; };
-		0576206D114E3957D270C8BA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B49114DF487A51F4260AC /* Theme.swift */; };
-		B51C0A2F579F6878F6E1678E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946F8B09CE1CC1F6B327505E /* Assets.xcassets */; };
+		083AF01ED8ACB08C31906DF7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F0367E252B7D1CA59E0A08 /* HomeView.swift */; };
+		1E2B66BB34E11A16452C9B98 /* ChallengeAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099A1B4DC02141F66CEBC532 /* ChallengeAttempt.swift */; };
+		298313B80B953BE951CFF917 /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADE37BBFBABD73E3DD1C999D /* ScheduleListView.swift */; };
+		2EB1F94E53B76A1C2F6DC189 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC3B7847D93AFBD199E7458 /* StatsView.swift */; };
+		384664BB3FEFE564323C5D0D /* NetworkLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 335F9DF084057DAC245B5BA8 /* NetworkLinesView.swift */; };
+		3B9AA79A6A9DFC7828C29ACA /* FocusLockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E707F738DE0222726F2C9F6 /* FocusLockUITests.swift */; };
+		48A435AC99BF5F8E64918AB0 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7670024864523A00918FE7A /* SharedComponents.swift */; };
+		4AA94CE52125D19392715372 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87882E24017120B5750799B /* Challenge.swift */; };
+		4F20C26B1042B18551423203 /* ChallengeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6340E86EA7642BE4174D3381 /* ChallengeEngine.swift */; };
+		52E8252E871B52E066B58F2C /* ScreenTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE626BB8997D5F42555284 /* ScreenTimeService.swift */; };
+		53D57D0F189319BE8633EC7A /* ActiveLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C1A75F9DE906474B4FB241 /* ActiveLockView.swift */; };
+		67727A9BE61D10F0562371C3 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3155ACC31249E3FBE61A0BF5 /* OnboardingView.swift */; };
+		6D6006402EDA29F41A52CF72 /* FocusSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8DECD2278FC9D918E3BA5E6 /* FocusSchedule.swift */; };
+		799359F0F437F5B05C516025 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1A0CB565CBA29F53935E22 /* Theme.swift */; };
+		896379CDE411E351F60046F1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D71F8F65B7549C6DECE1C0A4 /* ContentView.swift */; };
+		902C31DFA2474F03C9451A40 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 793F9580CD65E2CEA9754E81 /* ChallengeView.swift */; };
+		976DD9216B991EE8A000AD59 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B7430CD96E571B48A16620 /* SettingsView.swift */; };
+		C28BF83C323E7AC82BDF0A5F /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A264F4631CEBEA60AFEF5D /* FocusSession.swift */; };
+		C7A34D11DDAD991F4901A883 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA677BB4858D65F1B095B3C5 /* Assets.xcassets */; };
+		D3AC0919303D7B9AF20BB852 /* FocusLockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6B6B264531577FBCB1F17A5 /* FocusLockApp.swift */; };
+		DBA8F44DCA89F5B4ACB11C4B /* ScheduleCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585F4EBA675BBEF8A5B61FE6 /* ScheduleCreatorView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		21ACC3CE1DB3EFB7B9634564 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29E2A9ACFFADEAA47FD65614 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3B60F5E235D5C5B5D77396B0;
+			remoteInfo = FocusLock;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		CE5C17A0125F11601DC0B626 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView.swift"; sourceTree = "<group>"; };
-		B30D7103CF9664BE09319AF6 /* FocusLockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusLockApp.swift"; sourceTree = "<group>"; };
-		1FA68D050580CA3E757FB473 /* ActiveLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveLockView.swift"; sourceTree = "<group>"; };
-		135879FE374D8C16EF638C71 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeView.swift"; sourceTree = "<group>"; };
-		6E1BC6A85269EFC498A754DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView.swift"; sourceTree = "<group>"; };
-		7B750002DDE6B86C81863B4D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingView.swift"; sourceTree = "<group>"; };
-		FB6A3F6CED8F7808C7741640 /* ScheduleCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleCreatorView.swift"; sourceTree = "<group>"; };
-		A20826D1906B46EE0C0B476D /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleListView.swift"; sourceTree = "<group>"; };
-		CF4A5240462BA3E201902F6A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
-		B8330E312652270463151A7F /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsView.swift"; sourceTree = "<group>"; };
-		C7CC262F34FE0F0565FD82CE /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge.swift"; sourceTree = "<group>"; };
-		47571B976D63B25F9CC53708 /* ChallengeAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeAttempt.swift"; sourceTree = "<group>"; };
-		43B2BD3F402605FDFD2B9A8B /* FocusSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusSchedule.swift"; sourceTree = "<group>"; };
-		5E6F1F0ED5FA8780DD349AFD /* FocusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusSession.swift"; sourceTree = "<group>"; };
-		F8528C6B7847080E48817FBF /* ChallengeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeEngine.swift"; sourceTree = "<group>"; };
-		398FDECC72EA4BB913EDAB74 /* ScreenTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenTimeService.swift"; sourceTree = "<group>"; };
-		F587FB4F52B1450101240972 /* NetworkLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLinesView.swift"; sourceTree = "<group>"; };
-		96949EDA67F00089313ED281 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharedComponents.swift"; sourceTree = "<group>"; };
-		F50B49114DF487A51F4260AC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme.swift"; sourceTree = "<group>"; };
-		946F8B09CE1CC1F6B327505E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		E1BCA6FECAC9C2DB193FFE21 /* FocusLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		099A1B4DC02141F66CEBC532 /* ChallengeAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeAttempt.swift; sourceTree = "<group>"; };
+		0D55B858873779E025D610AE /* FocusLockUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = FocusLockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E707F738DE0222726F2C9F6 /* FocusLockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusLockUITests.swift; sourceTree = "<group>"; };
+		2F1A0CB565CBA29F53935E22 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		3155ACC31249E3FBE61A0BF5 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		335F9DF084057DAC245B5BA8 /* NetworkLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLinesView.swift; sourceTree = "<group>"; };
+		45DE626BB8997D5F42555284 /* ScreenTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeService.swift; sourceTree = "<group>"; };
+		48B7430CD96E571B48A16620 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		585F4EBA675BBEF8A5B61FE6 /* ScheduleCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCreatorView.swift; sourceTree = "<group>"; };
+		6340E86EA7642BE4174D3381 /* ChallengeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeEngine.swift; sourceTree = "<group>"; };
+		65A264F4631CEBEA60AFEF5D /* FocusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSession.swift; sourceTree = "<group>"; };
+		73F0367E252B7D1CA59E0A08 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		793F9580CD65E2CEA9754E81 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
+		92225BD262C1762AD004F175 /* FocusLock.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = FocusLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABC3B7847D93AFBD199E7458 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsView.swift; sourceTree = "<group>"; };
+		ADE37BBFBABD73E3DD1C999D /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleListView.swift; sourceTree = "<group>"; };
+		B7670024864523A00918FE7A /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
+		C87882E24017120B5750799B /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Challenge.swift; sourceTree = "<group>"; };
+		D71F8F65B7549C6DECE1C0A4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D8DECD2278FC9D918E3BA5E6 /* FocusSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusSchedule.swift; sourceTree = "<group>"; };
+		E6B6B264531577FBCB1F17A5 /* FocusLockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusLockApp.swift; sourceTree = "<group>"; };
+		EA677BB4858D65F1B095B3C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F0C1A75F9DE906474B4FB241 /* ActiveLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveLockView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		5A5B8B0893345DE1E1BC9CD9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		B465846761EC4E99F845EFC0 = {
+		01EE3630B8D7ED85770BD962 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				F1E615B95AA4B97F4AAB7F2E /* FocusLock */,
-				6E10CAF0E3D1CC6E67EA59FD /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		6E10CAF0E3D1CC6E67EA59FD /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				E1BCA6FECAC9C2DB193FFE21 /* FocusLock.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		F1E615B95AA4B97F4AAB7F2E /* FocusLock */ = {
-			isa = PBXGroup;
-			children = (
-				78F53AC6909A104D1CAF3000 /* App */,
-				B4AD05B9A14FC13BBB091460 /* Models */,
-				C0A716E72228060871D943BF /* Features */,
-				B46C279D78BFB641967A25A8 /* Services */,
-				558FB176DFEBE1476D0D70B4 /* Shared */,
-				946F8B09CE1CC1F6B327505E /* Assets.xcassets */,
-			);
-			path = FocusLock;
-			sourceTree = "<group>";
-		};
-		78F53AC6909A104D1CAF3000 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				CE5C17A0125F11601DC0B626 /* ContentView.swift */,
-				B30D7103CF9664BE09319AF6 /* FocusLockApp.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
-		B4AD05B9A14FC13BBB091460 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C7CC262F34FE0F0565FD82CE /* Challenge.swift */,
-				47571B976D63B25F9CC53708 /* ChallengeAttempt.swift */,
-				43B2BD3F402605FDFD2B9A8B /* FocusSchedule.swift */,
-				5E6F1F0ED5FA8780DD349AFD /* FocusSession.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C0A716E72228060871D943BF /* Features */ = {
-			isa = PBXGroup;
-			children = (
-				224D8F8C59E362B0E494ECBE /* Onboarding */,
-				DD2853B1058AFD7B349E57A2 /* Home */,
-				77245599238E1176AF0B440D /* Schedule */,
-				5B5526C89C034C8881456D31 /* ActiveLock */,
-				D4BCAA01D7DC8EB64C06E1FB /* Challenge */,
-				225187E6EB9ECE882CC654B0 /* Stats */,
-				9E4AA2EA76EC4A720D45A715 /* Settings */,
-			);
-			path = Features;
-			sourceTree = "<group>";
-		};
-		224D8F8C59E362B0E494ECBE /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				7B750002DDE6B86C81863B4D /* OnboardingView.swift */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		DD2853B1058AFD7B349E57A2 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				6E1BC6A85269EFC498A754DA /* HomeView.swift */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		77245599238E1176AF0B440D /* Schedule */ = {
-			isa = PBXGroup;
-			children = (
-				FB6A3F6CED8F7808C7741640 /* ScheduleCreatorView.swift */,
-				A20826D1906B46EE0C0B476D /* ScheduleListView.swift */,
-			);
-			path = Schedule;
-			sourceTree = "<group>";
-		};
-		5B5526C89C034C8881456D31 /* ActiveLock */ = {
-			isa = PBXGroup;
-			children = (
-				1FA68D050580CA3E757FB473 /* ActiveLockView.swift */,
-			);
-			path = ActiveLock;
-			sourceTree = "<group>";
-		};
-		D4BCAA01D7DC8EB64C06E1FB /* Challenge */ = {
-			isa = PBXGroup;
-			children = (
-				135879FE374D8C16EF638C71 /* ChallengeView.swift */,
-			);
-			path = Challenge;
-			sourceTree = "<group>";
-		};
-		225187E6EB9ECE882CC654B0 /* Stats */ = {
-			isa = PBXGroup;
-			children = (
-				B8330E312652270463151A7F /* StatsView.swift */,
-			);
-			path = Stats;
-			sourceTree = "<group>";
-		};
-		9E4AA2EA76EC4A720D45A715 /* Settings */ = {
-			isa = PBXGroup;
-			children = (
-				CF4A5240462BA3E201902F6A /* SettingsView.swift */,
-			);
-			path = Settings;
-			sourceTree = "<group>";
-		};
-		B46C279D78BFB641967A25A8 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				F8528C6B7847080E48817FBF /* ChallengeEngine.swift */,
-				398FDECC72EA4BB913EDAB74 /* ScreenTimeService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		558FB176DFEBE1476D0D70B4 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				9E68758CD8D3E70BAE5BD612 /* Theme */,
-				9AD6C4C8E633D7C29C01A8CA /* Components */,
+				A4167D0B5CB3B7F08C795BC1 /* Components */,
+				FA678E560DCAA2607828DF1A /* Theme */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		9E68758CD8D3E70BAE5BD612 /* Theme */ = {
+		039ABF572CF5615A71DFAA6C /* ActiveLock */ = {
 			isa = PBXGroup;
 			children = (
-				F50B49114DF487A51F4260AC /* Theme.swift */,
+				F0C1A75F9DE906474B4FB241 /* ActiveLockView.swift */,
 			);
-			path = Theme;
+			path = ActiveLock;
 			sourceTree = "<group>";
 		};
-		9AD6C4C8E633D7C29C01A8CA /* Components */ = {
+		24B57418F60634F93FD103F0 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				F587FB4F52B1450101240972 /* NetworkLinesView.swift */,
-				96949EDA67F00089313ED281 /* SharedComponents.swift */,
+				6340E86EA7642BE4174D3381 /* ChallengeEngine.swift */,
+				45DE626BB8997D5F42555284 /* ScreenTimeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2B0D48DD8841B8FEA6B840AF = {
+			isa = PBXGroup;
+			children = (
+				53D1D9CFAFC6DBBF3F2EBB83 /* FocusLock */,
+				EEA2FA72C9FE3EFC803D59E6 /* FocusLockUITests */,
+				C7F71669A533A4A1EF86823A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		39AF113214F7C5AA30D41F0E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C87882E24017120B5750799B /* Challenge.swift */,
+				099A1B4DC02141F66CEBC532 /* ChallengeAttempt.swift */,
+				D8DECD2278FC9D918E3BA5E6 /* FocusSchedule.swift */,
+				65A264F4631CEBEA60AFEF5D /* FocusSession.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		53D1D9CFAFC6DBBF3F2EBB83 /* FocusLock */ = {
+			isa = PBXGroup;
+			children = (
+				EA677BB4858D65F1B095B3C5 /* Assets.xcassets */,
+				B254D1A1C0EDD01577D09442 /* App */,
+				CE844FCFA56837BECBA22875 /* Features */,
+				39AF113214F7C5AA30D41F0E /* Models */,
+				24B57418F60634F93FD103F0 /* Services */,
+				01EE3630B8D7ED85770BD962 /* Shared */,
+			);
+			path = FocusLock;
+			sourceTree = "<group>";
+		};
+		6F28650CA44248582498A0BA /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				793F9580CD65E2CEA9754E81 /* ChallengeView.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		6F2B3A3D0C855D923F45E80D /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				48B7430CD96E571B48A16620 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		A4167D0B5CB3B7F08C795BC1 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				335F9DF084057DAC245B5BA8 /* NetworkLinesView.swift */,
+				B7670024864523A00918FE7A /* SharedComponents.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		B254D1A1C0EDD01577D09442 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D71F8F65B7549C6DECE1C0A4 /* ContentView.swift */,
+				E6B6B264531577FBCB1F17A5 /* FocusLockApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B32ED6CDDE07D7AEA0C3746D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				3155ACC31249E3FBE61A0BF5 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		C0A7F73D2753E5CAC1DE1A13 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				73F0367E252B7D1CA59E0A08 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C7F71669A533A4A1EF86823A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				92225BD262C1762AD004F175 /* FocusLock.app */,
+				0D55B858873779E025D610AE /* FocusLockUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE844FCFA56837BECBA22875 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				039ABF572CF5615A71DFAA6C /* ActiveLock */,
+				6F28650CA44248582498A0BA /* Challenge */,
+				C0A7F73D2753E5CAC1DE1A13 /* Home */,
+				B32ED6CDDE07D7AEA0C3746D /* Onboarding */,
+				F8E23A9992EEB10E7A5F7274 /* Schedule */,
+				6F2B3A3D0C855D923F45E80D /* Settings */,
+				D9D696E40A2027C675DB3A8D /* Stats */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		D9D696E40A2027C675DB3A8D /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				ABC3B7847D93AFBD199E7458 /* StatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		EEA2FA72C9FE3EFC803D59E6 /* FocusLockUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1E707F738DE0222726F2C9F6 /* FocusLockUITests.swift */,
+			);
+			path = FocusLockUITests;
+			sourceTree = "<group>";
+		};
+		F8E23A9992EEB10E7A5F7274 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				585F4EBA675BBEF8A5B61FE6 /* ScheduleCreatorView.swift */,
+				ADE37BBFBABD73E3DD1C999D /* ScheduleListView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		FA678E560DCAA2607828DF1A /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				2F1A0CB565CBA29F53935E22 /* Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3C86E9A30F34487BBE7EA728 /* FocusLock */ = {
+		3B60F5E235D5C5B5D77396B0 /* FocusLock */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C43209006019BD28DC834B89 /* Build configuration list for PBXNativeTarget "FocusLock" */;
+			buildConfigurationList = 344568AE97E40F4B35E512A3 /* Build configuration list for PBXNativeTarget "FocusLock" */;
 			buildPhases = (
-				E32BB47354DA32D301735BCA /* Sources */,
-				D09263E8D7B9AD049C9BC00A /* Resources */,
-				5A5B8B0893345DE1E1BC9CD9 /* Frameworks */,
+				757E9FBD9977116145065404 /* Sources */,
+				4FFFC11D3A3581B5D8D79DED /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = FocusLock;
+			packageProductDependencies = (
+			);
 			productName = FocusLock;
-			productReference = E1BCA6FECAC9C2DB193FFE21 /* FocusLock.app */;
+			productReference = 92225BD262C1762AD004F175 /* FocusLock.app */;
 			productType = "com.apple.product-type.application";
+		};
+		9CB6C014424519326CD43E46 /* FocusLockUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4917ED1351971D25762AAE8A /* Build configuration list for PBXNativeTarget "FocusLockUITests" */;
+			buildPhases = (
+				AD84D1935AC3CE022D344733 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7439D0BD52B74F04C85BBE10 /* PBXTargetDependency */,
+			);
+			name = FocusLockUITests;
+			packageProductDependencies = (
+			);
+			productName = FocusLockUITests;
+			productReference = 0D55B858873779E025D610AE /* FocusLockUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		783358D7FDE2925117484AAC /* Project object */ = {
+		29E2A9ACFFADEAA47FD65614 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1600;
-				LastUpgradeCheck = 1600;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					3C86E9A30F34487BBE7EA728 = {
-						CreatedOnToolsVersion = 16.0;
+					9CB6C014424519326CD43E46 = {
+						TestTargetID = 3B60F5E235D5C5B5D77396B0;
 					};
 				};
 			};
-			buildConfigurationList = D84E2EE2D11572C41CB16177 /* Build configuration list for PBXProject "FocusLock" */;
+			buildConfigurationList = 4E937BF2C3C5309AED844B32 /* Build configuration list for PBXProject "FocusLock" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = B465846761EC4E99F845EFC0;
-			productRefGroup = 6E10CAF0E3D1CC6E67EA59FD /* Products */;
+			mainGroup = 2B0D48DD8841B8FEA6B840AF;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3C86E9A30F34487BBE7EA728 /* FocusLock */,
+				3B60F5E235D5C5B5D77396B0 /* FocusLock */,
+				9CB6C014424519326CD43E46 /* FocusLockUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D09263E8D7B9AD049C9BC00A /* Resources */ = {
+		4FFFC11D3A3581B5D8D79DED /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B51C0A2F579F6878F6E1678E /* Assets.xcassets in Resources */,
+				C7A34D11DDAD991F4901A883 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E32BB47354DA32D301735BCA /* Sources */ = {
+		757E9FBD9977116145065404 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E9886C0CA6C88EC38A22FA1 /* ContentView.swift in Sources */,
-				D914106E66AD1C9DDCE8D9CA /* FocusLockApp.swift in Sources */,
-				FBE35E2A277E701C4C7512BE /* ActiveLockView.swift in Sources */,
-				2C32354A39153864E3A2B1BC /* ChallengeView.swift in Sources */,
-				951A1F307BB7426BB105B5E0 /* HomeView.swift in Sources */,
-				C3EDB6847D11A21B7C7C8CD1 /* OnboardingView.swift in Sources */,
-				F857D05ADD74E8472C0A2231 /* ScheduleCreatorView.swift in Sources */,
-				45BA4EF8E80474F7A7425CFA /* ScheduleListView.swift in Sources */,
-				D365DA76F320A17BB7FBE6E6 /* SettingsView.swift in Sources */,
-				2813B546DB40D8BD80D23F34 /* StatsView.swift in Sources */,
-				E043860448BEC13E716F1A54 /* Challenge.swift in Sources */,
-				68838723269F714165C0EE5D /* ChallengeAttempt.swift in Sources */,
-				0DDF92F537292191553288AC /* FocusSchedule.swift in Sources */,
-				6241B323C9C24CDE7C4BAF4C /* FocusSession.swift in Sources */,
-				8DC9433E1C0CFEEDB5EA5AB3 /* ChallengeEngine.swift in Sources */,
-				12AADDAA4ECCA04FA61BF494 /* ScreenTimeService.swift in Sources */,
-				61B8DD334E4ECCF50A9A1DC0 /* NetworkLinesView.swift in Sources */,
-				88E32D875C36AED6211D5421 /* SharedComponents.swift in Sources */,
-				0576206D114E3957D270C8BA /* Theme.swift in Sources */,
+				53D57D0F189319BE8633EC7A /* ActiveLockView.swift in Sources */,
+				4AA94CE52125D19392715372 /* Challenge.swift in Sources */,
+				1E2B66BB34E11A16452C9B98 /* ChallengeAttempt.swift in Sources */,
+				4F20C26B1042B18551423203 /* ChallengeEngine.swift in Sources */,
+				902C31DFA2474F03C9451A40 /* ChallengeView.swift in Sources */,
+				896379CDE411E351F60046F1 /* ContentView.swift in Sources */,
+				D3AC0919303D7B9AF20BB852 /* FocusLockApp.swift in Sources */,
+				6D6006402EDA29F41A52CF72 /* FocusSchedule.swift in Sources */,
+				C28BF83C323E7AC82BDF0A5F /* FocusSession.swift in Sources */,
+				083AF01ED8ACB08C31906DF7 /* HomeView.swift in Sources */,
+				384664BB3FEFE564323C5D0D /* NetworkLinesView.swift in Sources */,
+				67727A9BE61D10F0562371C3 /* OnboardingView.swift in Sources */,
+				DBA8F44DCA89F5B4ACB11C4B /* ScheduleCreatorView.swift in Sources */,
+				298313B80B953BE951CFF917 /* ScheduleListView.swift in Sources */,
+				52E8252E871B52E066B58F2C /* ScreenTimeService.swift in Sources */,
+				976DD9216B991EE8A000AD59 /* SettingsView.swift in Sources */,
+				48A435AC99BF5F8E64918AB0 /* SharedComponents.swift in Sources */,
+				2EB1F94E53B76A1C2F6DC189 /* StatsView.swift in Sources */,
+				799359F0F437F5B05C516025 /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AD84D1935AC3CE022D344733 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B9AA79A6A9DFC7828C29ACA /* FocusLockUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		7439D0BD52B74F04C85BBE10 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3B60F5E235D5C5B5D77396B0 /* FocusLock */;
+			targetProxy = 21ACC3CE1DB3EFB7B9634564 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		E67671AAABBD426E5D714F63 /* Debug */ = {
+		040770E2B7110707F9FB0A8C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				ONLY_ACTIVE_ARCH = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FocusLock;
 			};
 			name = Debug;
 		};
-		979ACE975A2B8555E9A1560A /* Release */ = {
+		284A47B68ADC5051580733F0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				VALIDATE_PRODUCT = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
-		2BEC3A57F1F90030F5E37A7F /* Debug */ = {
+		29159116B862B9EB373F0F44 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = FocusLock;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
-				LD_RUNPATH_SEARCH_PATHS = (
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
-					"@executable_path/Frameworks",
+					"DEBUG=1",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.focuslock.app;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
 			};
 			name = Debug;
 		};
-		6E2E9F6301FBD41F8ED80A35 /* Release */ = {
+		746BCEBF771E489DE1A14A19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FocusLock;
+			};
+			name = Release;
+		};
+		B2F13E2ED6CE81A123177902 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = FocusLock;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.focuslock.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
-				SUPPORTS_MACCATALYST = NO;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
+		};
+		C4399834DAC34596F7834C28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.focuslock.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D84E2EE2D11572C41CB16177 /* Build configuration list for PBXProject "FocusLock" */ = {
+		344568AE97E40F4B35E512A3 /* Build configuration list for PBXNativeTarget "FocusLock" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E67671AAABBD426E5D714F63 /* Debug */,
-				979ACE975A2B8555E9A1560A /* Release */,
+				C4399834DAC34596F7834C28 /* Debug */,
+				B2F13E2ED6CE81A123177902 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		C43209006019BD28DC834B89 /* Build configuration list for PBXNativeTarget "FocusLock" */ = {
+		4917ED1351971D25762AAE8A /* Build configuration list for PBXNativeTarget "FocusLockUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				2BEC3A57F1F90030F5E37A7F /* Debug */,
-				6E2E9F6301FBD41F8ED80A35 /* Release */,
+				040770E2B7110707F9FB0A8C /* Debug */,
+				746BCEBF771E489DE1A14A19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		4E937BF2C3C5309AED844B32 /* Build configuration list for PBXProject "FocusLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				29159116B862B9EB373F0F44 /* Debug */,
+				284A47B68ADC5051580733F0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 783358D7FDE2925117484AAC /* Project object */;
+	rootObject = 29E2A9ACFFADEAA47FD65614 /* Project object */;
 }
