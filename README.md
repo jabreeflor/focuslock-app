@@ -1,72 +1,47 @@
 # 🔒 FocusLock
 
-> **"Break the Lock, If You Can."**
+**Lock in. Level up.**
 
-FocusLock is an iOS app that blocks distracting apps during scheduled focus sessions. Want to check Instagram during work hours? Solve a math problem, word puzzle, or logic challenge first. The harder the difficulty, the longer it takes — making impulse scrolling not worth it.
+FocusLock helps you take control of your screen time by locking distracting apps on a schedule — and making you earn your way out with brain challenges. No more mindless scrolling.
 
-## Why FocusLock?
+## ✨ Features
 
-Apple's Screen Time is too easy to bypass — a single tap on "Ignore Limit" defeats the purpose. FocusLock adds **real friction** that scales with intentionality:
+- **Custom Schedules** — Set focus sessions by day, time, and duration
+- **App Blocking** — Lock specific apps using the Screen Time API
+- **Challenge Unlock** — Solve puzzles to unlock early (no easy outs)
+- **Stats Dashboard** — Track your focus streaks, screen time saved, and progress
+- **Onboarding Flow** — Quick setup to get blocking in minutes
+- **Persistent Storage** — All data saved locally with SwiftData
 
-- 🟢 **Easy** — Simple math (~10s) → 5 min unlock
-- 🟡 **Medium** — Word problems & patterns (~30-60s) → 10 min unlock
-- 🔴 **Hard** — Logic puzzles & long typing (2-5 min) → 15 min unlock
+## 📱 Screenshots
 
-## Features
+| | | |
+|:---:|:---:|:---:|
+| ![Onboarding](designs/screenshots/01-onboarding.png) | ![Dashboard](designs/screenshots/02-dashboard.png) | ![Schedule Creator](designs/screenshots/03-schedule-creator.png) |
+| **Onboarding / Welcome** | **Home Dashboard** | **Schedule Creator** |
+| ![Lock Screen](designs/screenshots/04-lock-screen.png) | ![Challenge](designs/screenshots/05-challenge.png) | ![Stats](designs/screenshots/06-stats.png) |
+| **Active Lock Screen** | **Challenge / Puzzle** | **Stats Dashboard** |
+| ![Settings](designs/screenshots/07-settings.png) | | |
+| **Settings** | | |
 
-### 🛡️ Smart App Blocking
-- Block any app using Apple's Screen Time API (FamilyControls / ManagedSettings)
-- Custom shield screen appears when you try to open blocked apps
-- Persists through force-quit — no easy bypass
+## 🛠 Tech Stack
 
-### 🧩 Challenge Engine
-- **Math challenges** — arithmetic problems scaled by difficulty
-- **Typing challenges** — type passages accurately
-- **Pattern matching** — complete visual or logical sequences
-- **Strict Mode** — difficulty escalates with each consecutive unlock attempt
+- **SwiftUI** — Declarative UI
+- **iOS 17+** — Minimum deployment target
+- **Screen Time API** — `FamilyControls` & `ManagedSettings` for app blocking
+- **SwiftData** — Local persistence
 
-### 📅 Flexible Scheduling
-- Recurring schedules (e.g., Mon–Fri 9am–5pm)
-- One-time focus sessions with custom duration
-- Per-schedule app selection and difficulty settings
+## 🚀 Getting Started
 
-### 📊 Focus Analytics
-- Daily/weekly/monthly focus time tracking
-- Streak counter with weekly summaries
-- Unlock attempt breakdown (completed vs. gave up)
-- Most-blocked app rankings
+1. **Clone the repo**
+   ```bash
+   git clone https://github.com/jabreeflor/focuslock-app.git
+   ```
+2. **Open in Xcode** — Requires Xcode 15+
+3. **Set your team** — Signing & Capabilities → select your dev team
+4. **Enable Screen Time entitlement** — Add `Family Controls` capability
+5. **Build & Run** on a physical device (Screen Time API requires a real device)
 
-## Architecture
-
-| Layer | Technology |
-|---|---|
-| UI | SwiftUI |
-| Data | SwiftData |
-| Screen Time | FamilyControls, ManagedSettings, DeviceActivity |
-| Charts | Swift Charts |
-| Target | iOS 17.0+ |
-
-```
-FocusLock/
-├── App/                    # App entry point
-├── Features/
-│   ├── Onboarding/         # First-run setup flow
-│   ├── Home/               # Dashboard & quick start
-│   ├── Schedule/           # CRUD for focus schedules
-│   ├── Challenge/          # Challenge UI & providers
-│   ├── Stats/              # Analytics & charts
-│   └── Settings/           # Preferences & config
-├── Models/                 # SwiftData models
-├── Services/               # Business logic layer
-├── Extensions/             # Screen Time extensions
-└── Shared/                 # Reusable components & theme
-```
-
-## Docs
-
-- [Product Requirements Document](docs/PRD.md)
-- [BDD Test Scenarios](docs/BDD-Scenarios.md)
-
-## License
+## 📄 License
 
 MIT
