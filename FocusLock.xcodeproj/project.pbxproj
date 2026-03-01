@@ -1,0 +1,447 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2E9886C0CA6C88EC38A22FA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5C17A0125F11601DC0B626 /* ContentView.swift */; };
+		D914106E66AD1C9DDCE8D9CA /* FocusLockApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30D7103CF9664BE09319AF6 /* FocusLockApp.swift */; };
+		FBE35E2A277E701C4C7512BE /* ActiveLockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA68D050580CA3E757FB473 /* ActiveLockView.swift */; };
+		2C32354A39153864E3A2B1BC /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135879FE374D8C16EF638C71 /* ChallengeView.swift */; };
+		951A1F307BB7426BB105B5E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E1BC6A85269EFC498A754DA /* HomeView.swift */; };
+		C3EDB6847D11A21B7C7C8CD1 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B750002DDE6B86C81863B4D /* OnboardingView.swift */; };
+		F857D05ADD74E8472C0A2231 /* ScheduleCreatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB6A3F6CED8F7808C7741640 /* ScheduleCreatorView.swift */; };
+		45BA4EF8E80474F7A7425CFA /* ScheduleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A20826D1906B46EE0C0B476D /* ScheduleListView.swift */; };
+		D365DA76F320A17BB7FBE6E6 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF4A5240462BA3E201902F6A /* SettingsView.swift */; };
+		2813B546DB40D8BD80D23F34 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8330E312652270463151A7F /* StatsView.swift */; };
+		E043860448BEC13E716F1A54 /* Challenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CC262F34FE0F0565FD82CE /* Challenge.swift */; };
+		68838723269F714165C0EE5D /* ChallengeAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47571B976D63B25F9CC53708 /* ChallengeAttempt.swift */; };
+		0DDF92F537292191553288AC /* FocusSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43B2BD3F402605FDFD2B9A8B /* FocusSchedule.swift */; };
+		6241B323C9C24CDE7C4BAF4C /* FocusSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6F1F0ED5FA8780DD349AFD /* FocusSession.swift */; };
+		8DC9433E1C0CFEEDB5EA5AB3 /* ChallengeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8528C6B7847080E48817FBF /* ChallengeEngine.swift */; };
+		12AADDAA4ECCA04FA61BF494 /* ScreenTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398FDECC72EA4BB913EDAB74 /* ScreenTimeService.swift */; };
+		61B8DD334E4ECCF50A9A1DC0 /* NetworkLinesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F587FB4F52B1450101240972 /* NetworkLinesView.swift */; };
+		88E32D875C36AED6211D5421 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96949EDA67F00089313ED281 /* SharedComponents.swift */; };
+		0576206D114E3957D270C8BA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = F50B49114DF487A51F4260AC /* Theme.swift */; };
+		B51C0A2F579F6878F6E1678E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 946F8B09CE1CC1F6B327505E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CE5C17A0125F11601DC0B626 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentView.swift"; sourceTree = "<group>"; };
+		B30D7103CF9664BE09319AF6 /* FocusLockApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusLockApp.swift"; sourceTree = "<group>"; };
+		1FA68D050580CA3E757FB473 /* ActiveLockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActiveLockView.swift"; sourceTree = "<group>"; };
+		135879FE374D8C16EF638C71 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeView.swift"; sourceTree = "<group>"; };
+		6E1BC6A85269EFC498A754DA /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeView.swift"; sourceTree = "<group>"; };
+		7B750002DDE6B86C81863B4D /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingView.swift"; sourceTree = "<group>"; };
+		FB6A3F6CED8F7808C7741640 /* ScheduleCreatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleCreatorView.swift"; sourceTree = "<group>"; };
+		A20826D1906B46EE0C0B476D /* ScheduleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScheduleListView.swift"; sourceTree = "<group>"; };
+		CF4A5240462BA3E201902F6A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SettingsView.swift"; sourceTree = "<group>"; };
+		B8330E312652270463151A7F /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StatsView.swift"; sourceTree = "<group>"; };
+		C7CC262F34FE0F0565FD82CE /* Challenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Challenge.swift"; sourceTree = "<group>"; };
+		47571B976D63B25F9CC53708 /* ChallengeAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeAttempt.swift"; sourceTree = "<group>"; };
+		43B2BD3F402605FDFD2B9A8B /* FocusSchedule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusSchedule.swift"; sourceTree = "<group>"; };
+		5E6F1F0ED5FA8780DD349AFD /* FocusSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FocusSession.swift"; sourceTree = "<group>"; };
+		F8528C6B7847080E48817FBF /* ChallengeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ChallengeEngine.swift"; sourceTree = "<group>"; };
+		398FDECC72EA4BB913EDAB74 /* ScreenTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ScreenTimeService.swift"; sourceTree = "<group>"; };
+		F587FB4F52B1450101240972 /* NetworkLinesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkLinesView.swift"; sourceTree = "<group>"; };
+		96949EDA67F00089313ED281 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharedComponents.swift"; sourceTree = "<group>"; };
+		F50B49114DF487A51F4260AC /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Theme.swift"; sourceTree = "<group>"; };
+		946F8B09CE1CC1F6B327505E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E1BCA6FECAC9C2DB193FFE21 /* FocusLock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FocusLock.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5A5B8B0893345DE1E1BC9CD9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B465846761EC4E99F845EFC0 = {
+			isa = PBXGroup;
+			children = (
+				F1E615B95AA4B97F4AAB7F2E /* FocusLock */,
+				6E10CAF0E3D1CC6E67EA59FD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6E10CAF0E3D1CC6E67EA59FD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E1BCA6FECAC9C2DB193FFE21 /* FocusLock.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1E615B95AA4B97F4AAB7F2E /* FocusLock */ = {
+			isa = PBXGroup;
+			children = (
+				78F53AC6909A104D1CAF3000 /* App */,
+				B4AD05B9A14FC13BBB091460 /* Models */,
+				C0A716E72228060871D943BF /* Features */,
+				B46C279D78BFB641967A25A8 /* Services */,
+				558FB176DFEBE1476D0D70B4 /* Shared */,
+				946F8B09CE1CC1F6B327505E /* Assets.xcassets */,
+			);
+			path = FocusLock;
+			sourceTree = "<group>";
+		};
+		78F53AC6909A104D1CAF3000 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				CE5C17A0125F11601DC0B626 /* ContentView.swift */,
+				B30D7103CF9664BE09319AF6 /* FocusLockApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		B4AD05B9A14FC13BBB091460 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C7CC262F34FE0F0565FD82CE /* Challenge.swift */,
+				47571B976D63B25F9CC53708 /* ChallengeAttempt.swift */,
+				43B2BD3F402605FDFD2B9A8B /* FocusSchedule.swift */,
+				5E6F1F0ED5FA8780DD349AFD /* FocusSession.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C0A716E72228060871D943BF /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				224D8F8C59E362B0E494ECBE /* Onboarding */,
+				DD2853B1058AFD7B349E57A2 /* Home */,
+				77245599238E1176AF0B440D /* Schedule */,
+				5B5526C89C034C8881456D31 /* ActiveLock */,
+				D4BCAA01D7DC8EB64C06E1FB /* Challenge */,
+				225187E6EB9ECE882CC654B0 /* Stats */,
+				9E4AA2EA76EC4A720D45A715 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		224D8F8C59E362B0E494ECBE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				7B750002DDE6B86C81863B4D /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		DD2853B1058AFD7B349E57A2 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				6E1BC6A85269EFC498A754DA /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		77245599238E1176AF0B440D /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				FB6A3F6CED8F7808C7741640 /* ScheduleCreatorView.swift */,
+				A20826D1906B46EE0C0B476D /* ScheduleListView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
+		5B5526C89C034C8881456D31 /* ActiveLock */ = {
+			isa = PBXGroup;
+			children = (
+				1FA68D050580CA3E757FB473 /* ActiveLockView.swift */,
+			);
+			path = ActiveLock;
+			sourceTree = "<group>";
+		};
+		D4BCAA01D7DC8EB64C06E1FB /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				135879FE374D8C16EF638C71 /* ChallengeView.swift */,
+			);
+			path = Challenge;
+			sourceTree = "<group>";
+		};
+		225187E6EB9ECE882CC654B0 /* Stats */ = {
+			isa = PBXGroup;
+			children = (
+				B8330E312652270463151A7F /* StatsView.swift */,
+			);
+			path = Stats;
+			sourceTree = "<group>";
+		};
+		9E4AA2EA76EC4A720D45A715 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				CF4A5240462BA3E201902F6A /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B46C279D78BFB641967A25A8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F8528C6B7847080E48817FBF /* ChallengeEngine.swift */,
+				398FDECC72EA4BB913EDAB74 /* ScreenTimeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		558FB176DFEBE1476D0D70B4 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				9E68758CD8D3E70BAE5BD612 /* Theme */,
+				9AD6C4C8E633D7C29C01A8CA /* Components */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		9E68758CD8D3E70BAE5BD612 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				F50B49114DF487A51F4260AC /* Theme.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		9AD6C4C8E633D7C29C01A8CA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F587FB4F52B1450101240972 /* NetworkLinesView.swift */,
+				96949EDA67F00089313ED281 /* SharedComponents.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C86E9A30F34487BBE7EA728 /* FocusLock */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C43209006019BD28DC834B89 /* Build configuration list for PBXNativeTarget "FocusLock" */;
+			buildPhases = (
+				E32BB47354DA32D301735BCA /* Sources */,
+				D09263E8D7B9AD049C9BC00A /* Resources */,
+				5A5B8B0893345DE1E1BC9CD9 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FocusLock;
+			productName = FocusLock;
+			productReference = E1BCA6FECAC9C2DB193FFE21 /* FocusLock.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		783358D7FDE2925117484AAC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					3C86E9A30F34487BBE7EA728 = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = D84E2EE2D11572C41CB16177 /* Build configuration list for PBXProject "FocusLock" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B465846761EC4E99F845EFC0;
+			productRefGroup = 6E10CAF0E3D1CC6E67EA59FD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C86E9A30F34487BBE7EA728 /* FocusLock */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D09263E8D7B9AD049C9BC00A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B51C0A2F579F6878F6E1678E /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E32BB47354DA32D301735BCA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E9886C0CA6C88EC38A22FA1 /* ContentView.swift in Sources */,
+				D914106E66AD1C9DDCE8D9CA /* FocusLockApp.swift in Sources */,
+				FBE35E2A277E701C4C7512BE /* ActiveLockView.swift in Sources */,
+				2C32354A39153864E3A2B1BC /* ChallengeView.swift in Sources */,
+				951A1F307BB7426BB105B5E0 /* HomeView.swift in Sources */,
+				C3EDB6847D11A21B7C7C8CD1 /* OnboardingView.swift in Sources */,
+				F857D05ADD74E8472C0A2231 /* ScheduleCreatorView.swift in Sources */,
+				45BA4EF8E80474F7A7425CFA /* ScheduleListView.swift in Sources */,
+				D365DA76F320A17BB7FBE6E6 /* SettingsView.swift in Sources */,
+				2813B546DB40D8BD80D23F34 /* StatsView.swift in Sources */,
+				E043860448BEC13E716F1A54 /* Challenge.swift in Sources */,
+				68838723269F714165C0EE5D /* ChallengeAttempt.swift in Sources */,
+				0DDF92F537292191553288AC /* FocusSchedule.swift in Sources */,
+				6241B323C9C24CDE7C4BAF4C /* FocusSession.swift in Sources */,
+				8DC9433E1C0CFEEDB5EA5AB3 /* ChallengeEngine.swift in Sources */,
+				12AADDAA4ECCA04FA61BF494 /* ScreenTimeService.swift in Sources */,
+				61B8DD334E4ECCF50A9A1DC0 /* NetworkLinesView.swift in Sources */,
+				88E32D875C36AED6211D5421 /* SharedComponents.swift in Sources */,
+				0576206D114E3957D270C8BA /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		E67671AAABBD426E5D714F63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) DEBUG";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		979ACE975A2B8555E9A1560A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2BEC3A57F1F90030F5E37A7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FocusLock;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.focuslock.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Debug;
+		};
+		6E2E9F6301FBD41F8ED80A35 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = FocusLock;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.focuslock.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D84E2EE2D11572C41CB16177 /* Build configuration list for PBXProject "FocusLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E67671AAABBD426E5D714F63 /* Debug */,
+				979ACE975A2B8555E9A1560A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C43209006019BD28DC834B89 /* Build configuration list for PBXNativeTarget "FocusLock" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BEC3A57F1F90030F5E37A7F /* Debug */,
+				6E2E9F6301FBD41F8ED80A35 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 783358D7FDE2925117484AAC /* Project object */;
+}
