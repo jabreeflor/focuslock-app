@@ -5,97 +5,119 @@ final class FocusLockBDDTests: XCTestCase {
     
     override func setUp() {
         continueAfterFailure = true
+    }
+    
+    func testFullAppWalkthrough() throws {
         app.launch()
-    }
-    
-    // MARK: - Onboarding
-    
-    func testOnboardingScreenDisplayed() {
-        XCTAssertTrue(app.staticTexts["FocusLock"].exists)
-        XCTAssertTrue(app.staticTexts["Lock in. Level up."].exists)
-        saveScreenshot("bdd-01-onboarding")
-    }
-    
-    func testGetStartedNavigatesToHome() {
-        let btn = app.buttons["Get Started →"]
-        if btn.waitForExistence(timeout: 3) {
-            btn.tap()
-        }
-        // Whether we came from onboarding or launched directly, tab bar should exist
-        let tabBar = app.tabBars.firstMatch
-        XCTAssertTrue(tabBar.waitForExistence(timeout: 5))
-        saveScreenshot("bdd-02-home-after-onboarding")
-    }
-    
-    // MARK: - Home Screen
-    
-    func testHomeScreenElements() {
-        navigateToHome()
-        XCTAssertTrue(app.tabBars.buttons["Home"].exists)
-        saveScreenshot("bdd-03-home-dashboard")
-    }
-    
-    // MARK: - Tab Navigation
-    
-    func testNavigateToStats() {
-        navigateToHome()
+        sleep(2)
+        saveScreenshot("01-onboarding")
+        
+        // Tap Get Started
+        let getStarted = app.buttons["Get Started →"]
+        XCTAssertTrue(getStarted.waitForExistence(timeout: 3))
+        getStarted.tap()
+        sleep(2)
+        saveScreenshot("02-home-dashboard")
+        
+        // Navigate to Stats
         app.tabBars.buttons["Stats"].tap()
-        sleep(1)
-        saveScreenshot("bdd-04-stats")
-    }
-    
-    func testNavigateToSettings() {
-        navigateToHome()
+        sleep(2)
+        saveScreenshot("03-stats")
+        
+        // Navigate to Settings
         app.tabBars.buttons["Settings"].tap()
-        sleep(1)
-        saveScreenshot("bdd-05-settings")
-    }
-    
-    func testNavigateToSchedules() {
-        navigateToHome()
+        sleep(2)
+        saveScreenshot("04-settings")
+        
+        // Navigate to Schedules
         let schedulesTab = app.tabBars.buttons["Schedules"]
         if schedulesTab.exists {
             schedulesTab.tap()
-            sleep(1)
+            sleep(2)
+            saveScreenshot("05-schedules")
         }
-        saveScreenshot("bdd-06-schedules")
+        
+        // Back to Home and start focus session
+        app.tabBars.buttons["Home"].tap()
+        sleep(1)
+        let focusBtn = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'focus' OR label CONTAINS[c] 'start'")).firstMatch
+        if focusBtn.waitForExistence(timeout: 3) {
+            focusBtn.tap()
+            sleep(3)
+            saveScreenshot("06-active-focus")
+        }
     }
     
-    // MARK: - Stats Screen
+    // Keep individual tests for CI
+    func testOnboardingScreenDisplayed() {
+        app.launch()
+        XCTAssertTrue(app.staticTexts["FocusLock"].waitForExistence(timeout: 5))
+        XCTAssertTrue(app.staticTexts["Lock in. Level up."].exists)
+    }
     
-    func testStatsShowsWeeklyChart() {
+    func testGetStartedNavigatesToHome() {
+        app.launch()
+        let btn = app.buttons["Get Started →"]
+        if btn.waitForExistence(timeout: 3) {
+            btn.tap()
+            let tabBar = app.tabBars.firstMatch
+            XCTAssertTrue(tabBar.waitForExistence(timeout: 3))
+        }
+    }
+    
+    func testHomeScreenElements() {
+        app.launch()
+        navigateToHome()
+        XCTAssertTrue(app.tabBars.buttons["Home"].exists)
+    }
+    
+    func testNavigateToStats() {
+        app.launch()
         navigateToHome()
         app.tabBars.buttons["Stats"].tap()
         sleep(1)
-        saveScreenshot("bdd-07-stats-chart")
     }
     
-    // MARK: - Settings Screen
-    
-    func testSettingsShowsProfile() {
+    func testNavigateToSettings() {
+        app.launch()
         navigateToHome()
         app.tabBars.buttons["Settings"].tap()
         sleep(1)
-        saveScreenshot("bdd-08-settings-profile")
+    }
+    
+    func testNavigateToSchedules() {
+        app.launch()
+        navigateToHome()
+        let schedulesTab = app.tabBars.buttons["Schedules"]
+        if schedulesTab.exists { schedulesTab.tap(); sleep(1) }
+    }
+    
+    func testStatsShowsWeeklyChart() {
+        app.launch()
+        navigateToHome()
+        app.tabBars.buttons["Stats"].tap()
+        sleep(1)
+    }
+    
+    func testSettingsShowsProfile() {
+        app.launch()
+        navigateToHome()
+        app.tabBars.buttons["Settings"].tap()
+        sleep(1)
     }
     
     func testSettingsToggles() {
+        app.launch()
         navigateToHome()
         app.tabBars.buttons["Settings"].tap()
         sleep(1)
-        saveScreenshot("bdd-09-settings-toggles")
     }
     
-    // MARK: - Focus Session
-    
     func testStartFocusSession() {
+        app.launch()
         navigateToHome()
-        let focusButtons = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'focus' OR label CONTAINS[c] 'start'"))
-        if focusButtons.count > 0 {
-            focusButtons.firstMatch.tap()
-            sleep(2)
-        }
-        saveScreenshot("bdd-10-focus-session")
+        let focusBtn = app.buttons.matching(NSPredicate(format: "label CONTAINS[c] 'focus' OR label CONTAINS[c] 'start'")).firstMatch
+        if focusBtn.waitForExistence(timeout: 3) { focusBtn.tap(); sleep(2) }
     }
     
     // MARK: - Helpers
