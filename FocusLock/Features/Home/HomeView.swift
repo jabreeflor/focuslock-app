@@ -63,7 +63,11 @@ struct HomeView: View {
                         .ctaButton()
                 }
                 .padding(.horizontal, 24)
-                .padding(.bottom, 20)
+                .padding(.bottom, 12)
+                
+                // Banner Ad
+                BannerAdView()
+                    .padding(.bottom, 16)
             }
             .padding(.top, 16)
         }

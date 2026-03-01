@@ -35,6 +35,9 @@ struct StatsView: View {
                 // Stat Cards 2x2
                 statCardsGrid
                 
+                // Native Ad
+                NativeAdView()
+                
                 // Heatmap
                 heatmapSection
                 

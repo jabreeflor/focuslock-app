@@ -7,7 +7,9 @@ struct SettingsView: View {
     @State private var sessionStartNotif = true
     @State private var sessionEndNotif = true
     @State private var weeklySummary = true
+    @State private var showProUpgrade = false
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = true
+    @ObservedObject private var storeManager = StoreManager.shared
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -22,6 +24,11 @@ struct SettingsView: View {
                         .foregroundStyle(FLColor.cyan)
                 }
                 .padding(.top, 16)
+                
+                // FocusLock Pro
+                if !storeManager.isProUser {
+                    proUpgradeSection
+                }
                 
                 // Profile Section
                 profileSection
@@ -41,6 +48,22 @@ struct SettingsView: View {
                 // About
                 aboutSection
                 
+                // Restore Purchases
+                Button {
+                    Task { await storeManager.restorePurchases() }
+                } label: {
+                    HStack(spacing: 8) {
+                        Image(systemName: "arrow.clockwise")
+                            .font(.system(size: 14))
+                        Text("Restore Purchases")
+                            .font(.system(size: 16, weight: .medium))
+                    }
+                    .foregroundStyle(FLColor.cyan)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 16)
+                    .glassCard()
+                }
+                
                 // Sign Out
                 Button {
                     hasCompletedOnboarding = false
@@ -58,6 +81,42 @@ struct SettingsView: View {
             .padding(.horizontal, 20)
         }
         .focusLockBackground()
+        .sheet(isPresented: $showProUpgrade) {
+            FocusLockProView()
+        }
+    }
+    
+    // MARK: - Pro Upgrade
+    
+    private var proUpgradeSection: some View {
+        Button { showProUpgrade = true } label: {
+            HStack(spacing: 14) {
+                PremiumBadge(size: .medium)
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text("Remove Ads")
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundStyle(.white)
+                    Text("From \(storeManager.monthlyPrice)/month")
+                        .font(.system(size: 13))
+                        .foregroundStyle(.white.opacity(0.6))
+                }
+                
+                Spacer()
+                
+                Image(systemName: "chevron.right")
+                    .foregroundStyle(FLColor.cyan)
+            }
+            .padding(16)
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color(hex: "FFD700").opacity(0.05))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(Color(hex: "FFD700").opacity(0.2), lineWidth: 1)
+                    )
+            )
+        }
     }
     
     // MARK: - Profile

@@ -142,6 +142,17 @@ struct ChallengeView: View {
             
             Spacer().frame(height: 16)
             
+            // Watch Ad to Skip
+            RewardedAdButton {
+                timer?.invalidate()
+                withAnimation(.spring(response: 0.4)) {
+                    isSolved = true
+                }
+            }
+            .padding(.horizontal, 20)
+            
+            Spacer().frame(height: 12)
+            
             // Give Up button
             Button {
                 isPresented = false

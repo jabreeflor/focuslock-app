@@ -4,6 +4,7 @@ struct ActiveLockView: View {
     @Binding var isPresented: Bool
     @State private var timeRemaining: TimeInterval = 107 * 60 + 23 // 1:47:23
     @State private var showChallenge = false
+    @State private var showInterstitial = false
     @State private var timer: Timer?
     
     private let blockedApps = Array(MockApp.all.prefix(4))
@@ -105,6 +106,9 @@ struct ActiveLockView: View {
         .fullScreenCover(isPresented: $showChallenge) {
             ChallengeView(isPresented: $showChallenge, difficulty: .medium)
         }
+        .fullScreenCover(isPresented: $showInterstitial) {
+            InterstitialAdView(isPresented: $showInterstitial)
+        }
         .onAppear { startTimer() }
         .onDisappear { timer?.invalidate() }
     }
@@ -115,7 +119,11 @@ struct ActiveLockView: View {
                 timeRemaining -= 1
             } else {
                 timer?.invalidate()
-                isPresented = false
+                // Show interstitial ad when session completes
+                showInterstitial = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                    isPresented = false
+                }
             }
         }
     }
