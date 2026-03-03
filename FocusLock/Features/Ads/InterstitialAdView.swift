@@ -74,7 +74,7 @@ struct InterstitialAdView: View {
     }
     
     private func startCountdown() {
-        AdManager.shared.showInterstitial()
+        _ = AdManager.shared.showInterstitial()
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if countdown > 1 {
                 countdown -= 1

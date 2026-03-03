@@ -10,6 +10,7 @@ struct SettingsView: View {
     @State private var showProUpgrade = false
     @AppStorage("hasCompletedOnboarding") private var hasCompletedOnboarding = true
     @ObservedObject private var storeManager = StoreManager.shared
+    @ObservedObject private var screenTimeService = ScreenTimeService.shared
     
     var body: some View {
         ScrollView(showsIndicators: false) {
@@ -32,6 +33,9 @@ struct SettingsView: View {
                 
                 // Profile Section
                 profileSection
+                
+                // Screen Time Permissions
+                screenTimePermissionsSection
                 
                 // Notifications
                 notificationSection
@@ -156,6 +160,86 @@ struct SettingsView: View {
         }
         .padding(16)
         .glassCard()
+    }
+    
+    // MARK: - Screen Time Permissions
+    
+    private var screenTimePermissionsSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Screen Time")
+                .font(.system(size: 18, weight: .bold))
+                .foregroundStyle(.white)
+            
+            VStack(spacing: 0) {
+                HStack(spacing: 12) {
+                    Image(systemName: screenTimeService.isAuthorized ? "checkmark.shield.fill" : "exclamationmark.shield.fill")
+                        .font(.system(size: 20))
+                        .foregroundStyle(screenTimeService.isAuthorized ? .green : FLColor.amber)
+                    
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text("App Blocking Permission")
+                            .font(.system(size: 16, weight: .medium))
+                            .foregroundStyle(.white)
+                        
+                        Text(screenTimeService.isAuthorized 
+                             ? "FocusLock can block apps during focus sessions" 
+                             : "Required to block distracting apps")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.white.opacity(0.6))
+                    }
+                    
+                    Spacer()
+                    
+                    if !screenTimeService.isAuthorized {
+                        Button("Enable") {
+                            Task {
+                                await screenTimeService.requestAuthorization()
+                            }
+                        }
+                        .font(.system(size: 14, weight: .semibold))
+                        .foregroundStyle(FLColor.cyan)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(
+                            Capsule()
+                                .fill(FLColor.cyan.opacity(0.15))
+                        )
+                    }
+                }
+                .padding(16)
+                
+                if screenTimeService.isAuthorized {
+                    Divider()
+                        .background(.white.opacity(0.1))
+                    
+                    HStack {
+                        Text("Selected Apps")
+                            .font(.system(size: 16))
+                            .foregroundStyle(.white)
+                        
+                        Spacer()
+                        
+                        let appNames = screenTimeService.getSelectedAppNames()
+                        Text(appNames.isEmpty ? "None selected" : appNames.joined(separator: ", "))
+                            .font(.system(size: 14))
+                            .foregroundStyle(.white.opacity(0.6))
+                        
+                        Image(systemName: "chevron.right")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.white.opacity(0.3))
+                    }
+                    .padding(16)
+                }
+            }
+            .background(
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(.white.opacity(0.03))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 16)
+                            .stroke(.white.opacity(0.08), lineWidth: 1)
+                    )
+            )
+        }
     }
     
     // MARK: - Notifications
