@@ -33,7 +33,7 @@ struct HomeView: View {
                 break
             }
         }
-        return max(streak, 7) // Show 7 for demo
+        return streak > 0 ? streak : 1 // Minimum 1 on active use
     }
     
     var body: some View {
@@ -57,6 +57,7 @@ struct HomeView: View {
                 
                 // Start Button
                 Button {
+                    FLHaptic.impact(.medium)
                     isSessionActive = true
                 } label: {
                     Text("Start Focus Session →")
@@ -64,6 +65,7 @@ struct HomeView: View {
                 }
                 .padding(.horizontal, 24)
                 .padding(.bottom, 12)
+                .buttonStyle(ScaleButtonStyle())
                 
                 // Banner Ad
                 BannerAdView()

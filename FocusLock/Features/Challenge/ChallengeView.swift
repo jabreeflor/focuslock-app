@@ -11,6 +11,7 @@ struct ChallengeView: View {
     @State private var isIncorrect = false
     @State private var isSolved = false
     @State private var challengesRemaining = 3
+    @State private var shakeOffset: CGFloat = 0
     
     init(isPresented: Binding<Bool>, difficulty: Difficulty) {
         self._isPresented = isPresented
@@ -22,19 +23,25 @@ struct ChallengeView: View {
         ZStack {
             FLColor.backgroundGradient.ignoresSafeArea()
             NetworkLinesView()
-            
+
             if isSolved {
                 solvedOverlay
+                    .transition(.asymmetric(
+                        insertion: .scale(scale: 0.85).combined(with: .opacity),
+                        removal: .opacity
+                    ))
             } else {
                 challengeContent
+                    .transition(.opacity)
             }
         }
+        .animation(.spring(response: 0.45, dampingFraction: 0.72), value: isSolved)
         .onAppear { startTimer() }
         .onDisappear { timer?.invalidate() }
     }
     
     // MARK: - Challenge Content
-    
+
     private var challengeContent: some View {
         VStack(spacing: 0) {
             Spacer().frame(height: 40)
@@ -110,7 +117,7 @@ struct ChallengeView: View {
                 Text(userAnswer.isEmpty ? "Your answer" : userAnswer)
                     .font(.system(size: 28, weight: .bold))
                     .foregroundStyle(userAnswer.isEmpty ? .white.opacity(0.3) : .white)
-                
+
                 if !userAnswer.isEmpty {
                     Rectangle()
                         .fill(FLColor.cyan)
@@ -127,78 +134,57 @@ struct ChallengeView: View {
                     .stroke(isIncorrect ? FLColor.dangerRed : .clear, lineWidth: 2)
                     .padding(.horizontal, 40)
             )
-            
+            .offset(x: shakeOffset)
+
             if isIncorrect {
                 Text("Incorrect, try again")
                     .font(.system(size: 14, weight: .medium))
                     .foregroundStyle(FLColor.dangerRed)
                     .padding(.top, 8)
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
             }
             
-            Spacer().frame(height: 24)
-            
+            Spacer().frame(height: 20)
+
             // Number Pad
             numberPad
-            
-            Spacer().frame(height: 16)
-            
+
+            Spacer().frame(minHeight: 12)
+
             // Watch Ad to Skip
             RewardedAdButton {
                 timer?.invalidate()
+                FLHaptic.success()
                 withAnimation(.spring(response: 0.4)) {
                     isSolved = true
                 }
             }
             .padding(.horizontal, 20)
-            
-            Spacer().frame(height: 12)
-            
+
+            Spacer().frame(height: 10)
+
             // Give Up button
             Button {
+                FLHaptic.impact(.light)
                 isPresented = false
             } label: {
                 Text("Give Up")
                     .font(.system(size: 15, weight: .medium))
                     .foregroundStyle(.white.opacity(0.5))
             }
-            
-            Spacer().frame(height: 32)
+            .padding(.bottom, 28)
         }
+        .safeAreaInset(edge: .bottom) { Color.clear.frame(height: 0) }
     }
     
     // MARK: - Number Pad
-    
+
     private var numberPad: some View {
         VStack(spacing: 10) {
             ForEach(numberRows, id: \.self) { row in
                 HStack(spacing: 10) {
                     ForEach(row, id: \.self) { key in
-                        Button {
-                            handleKey(key)
-                        } label: {
-                            Group {
-                                if key == "⌫" {
-                                    Image(systemName: "delete.left")
-                                        .font(.system(size: 20))
-                                } else if key == "✓" {
-                                    Image(systemName: "checkmark")
-                                        .font(.system(size: 20, weight: .bold))
-                                } else {
-                                    Text(key)
-                                        .font(.system(size: 24, weight: .semibold))
-                                }
-                            }
-                            .foregroundStyle(key == "✓" ? .white : .white)
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 52)
-                            .background(
-                                RoundedRectangle(cornerRadius: 12)
-                                    .fill(key == "✓"
-                                        ? AnyShapeStyle(FLColor.ctaGradient)
-                                        : AnyShapeStyle(Color.white.opacity(0.08))
-                                    )
-                            )
-                        }
+                        NumPadKey(key: key) { handleKey(key) }
                     }
                 }
             }
@@ -216,14 +202,18 @@ struct ChallengeView: View {
     }
     
     private func handleKey(_ key: String) {
-        isIncorrect = false
+        withAnimation(.easeOut(duration: 0.1)) { isIncorrect = false }
         switch key {
         case "⌫":
-            if !userAnswer.isEmpty { userAnswer.removeLast() }
+            if !userAnswer.isEmpty {
+                FLHaptic.selection()
+                userAnswer.removeLast()
+            }
         case "✓":
             submitAnswer()
         default:
             if userAnswer.count < 10 {
+                FLHaptic.selection()
                 userAnswer += key
             }
         }
@@ -232,13 +222,19 @@ struct ChallengeView: View {
     private func submitAnswer() {
         if ChallengeEngine.shared.validate(answer: userAnswer, for: challenge) {
             timer?.invalidate()
-            withAnimation(.spring(response: 0.4)) {
+            FLHaptic.success()
+            withAnimation(.spring(response: 0.4, dampingFraction: 0.7)) {
                 isSolved = true
             }
         } else {
-            withAnimation(.easeInOut(duration: 0.3)) {
-                isIncorrect = true
+            FLHaptic.error()
+            withAnimation(.easeInOut(duration: 0.12).repeatCount(4, autoreverses: true)) {
+                shakeOffset = 10
             }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                shakeOffset = 0
+            }
+            withAnimation { isIncorrect = true }
             userAnswer = ""
             challengesRemaining = max(0, challengesRemaining - 1)
             challenge = ChallengeEngine.shared.generate(difficulty: difficulty)

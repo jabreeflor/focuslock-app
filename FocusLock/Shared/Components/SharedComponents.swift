@@ -149,6 +149,50 @@ struct FocusLockLogo: View {
     }
 }
 
+// MARK: - Number Pad Key
+
+struct NumPadKey: View {
+    let key: String
+    let action: () -> Void
+    @State private var isPressed = false
+
+    private var isConfirm: Bool { key == "✓" }
+    private var isDelete: Bool { key == "⌫" }
+
+    var body: some View {
+        Button(action: {
+            action()
+        }) {
+            Group {
+                if isDelete {
+                    Image(systemName: "delete.left")
+                        .font(.system(size: 22))
+                } else if isConfirm {
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 22, weight: .bold))
+                } else {
+                    Text(key)
+                        .font(.system(size: 26, weight: .semibold))
+                }
+            }
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .frame(height: 58)
+            .background(
+                RoundedRectangle(cornerRadius: 14)
+                    .fill(isConfirm
+                        ? AnyShapeStyle(FLColor.ctaGradient)
+                        : AnyShapeStyle(Color.white.opacity(0.09)))
+                    .shadow(color: isConfirm ? FLColor.cyan.opacity(0.3) : .clear, radius: 8)
+            )
+            .scaleEffect(isPressed ? 0.93 : 1.0)
+            .animation(.spring(response: 0.2, dampingFraction: 0.7), value: isPressed)
+        }
+        .buttonStyle(.plain)
+        ._onButtonGesture(pressing: { pressing in isPressed = pressing }, perform: {})
+    }
+}
+
 // MARK: - Progress Ring
 
 struct ProgressRing: View {

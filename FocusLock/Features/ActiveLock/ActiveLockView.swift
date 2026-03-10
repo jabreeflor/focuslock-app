@@ -2,24 +2,25 @@ import SwiftUI
 
 struct ActiveLockView: View {
     @Binding var isPresented: Bool
-    @State private var timeRemaining: TimeInterval = 107 * 60 + 23 // 1:47:23
+    @State private var timeRemaining: TimeInterval = 107 * 60 + 23
     @State private var showChallenge = false
     @State private var showInterstitial = false
     @State private var timer: Timer?
-    
+    @State private var pulseApps = false
+    @State private var timerGlow = false
+
     private let blockedApps = Array(MockApp.all.prefix(4))
-    
+
     var body: some View {
         ZStack {
             FLColor.backgroundGradient.ignoresSafeArea()
             NetworkLinesView()
             SparkleView(count: 10)
-            
+
             VStack(spacing: 0) {
-                Spacer()
-                    .frame(height: 60)
-                
-                // Session Title Card
+                Spacer().frame(height: 48)
+
+                // Session title
                 VStack(spacing: 4) {
                     Text("Work Focus")
                         .font(.system(size: 18, weight: .bold))
@@ -31,95 +32,105 @@ struct ActiveLockView: View {
                 .padding(.vertical, 16)
                 .padding(.horizontal, 32)
                 .glassCard(cornerRadius: 20)
-                
-                Spacer()
-                    .frame(height: 40)
-                
-                // Countdown Timer
-                VStack(spacing: 8) {
+
+                Spacer().frame(height: 36)
+
+                // Countdown timer
+                VStack(spacing: 6) {
                     Text(formatTime(timeRemaining))
-                        .font(.system(size: 60, weight: .bold, design: .monospaced))
+                        .font(.system(size: 58, weight: .bold, design: .monospaced))
                         .foregroundStyle(FLColor.timerTextGradient)
-                    
+                        .shadow(color: FLColor.cyan.opacity(timerGlow ? 0.6 : 0.2), radius: timerGlow ? 24 : 8)
+                        .animation(.easeInOut(duration: 1.5).repeatForever(autoreverses: true), value: timerGlow)
+
                     Text("remaining")
-                        .font(.system(size: 22, weight: .medium))
+                        .font(.system(size: 20, weight: .medium))
                         .foregroundStyle(FLColor.lavender)
                 }
-                
-                Spacer()
-                    .frame(height: 40)
-                
-                // Blocked Apps
-                HStack(spacing: 12) {
+
+                Spacer().frame(height: 36)
+
+                // Blocked apps — subtle pulse to reinforce locked state
+                HStack(spacing: 14) {
                     ForEach(blockedApps) { app in
                         MockAppIcon(
                             name: app.name,
                             color: app.color,
                             symbol: app.symbol,
-                            size: 50,
+                            size: 52,
                             isLocked: true
+                        )
+                        .scaleEffect(pulseApps ? 1.0 : 0.96)
+                        .animation(
+                            .easeInOut(duration: 2.5)
+                            .repeatForever(autoreverses: true)
+                            .delay(Double(blockedApps.firstIndex(where: { $0.id == app.id }) ?? 0) * 0.2),
+                            value: pulseApps
                         )
                     }
                 }
-                .padding(16)
+                .padding(18)
                 .glassCard()
-                
+
                 Spacer()
-                    .frame(height: 32)
-                
-                // Unlock Early Button
+
+                // Motivational quote
+                Text("Stay focused. Your future self\nwill thank you.")
+                    .font(.system(size: 16))
+                    .foregroundStyle(.white.opacity(0.75))
+                    .multilineTextAlignment(.center)
+
+                Spacer().frame(height: 20)
+
+                // Unlock Early button
                 Button {
+                    FLHaptic.impact(.heavy)
                     showChallenge = true
                 } label: {
                     HStack(spacing: 8) {
                         Text("Unlock Early")
                             .font(.system(size: 17, weight: .semibold))
                             .foregroundStyle(.white)
-                        
                         Image(systemName: "exclamationmark.triangle.fill")
                             .font(.system(size: 14))
                             .foregroundStyle(FLColor.amber)
                     }
-                    .frame(width: 280, height: 50)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 52)
                     .background(
                         Capsule()
                             .fill(FLColor.darkRed.opacity(0.3))
-                            .overlay(
-                                Capsule()
-                                    .stroke(FLColor.dangerRed, lineWidth: 2)
-                            )
-                            .shadow(color: FLColor.dangerRed.opacity(0.3), radius: 8)
+                            .overlay(Capsule().stroke(FLColor.dangerRed, lineWidth: 2))
+                            .shadow(color: FLColor.dangerRed.opacity(0.25), radius: 12)
                     )
                 }
-                
-                Spacer()
-                
-                // Motivational Quote
-                Text("Stay focused. Your future self\nwill thank you.")
-                    .font(.system(size: 16))
-                    .foregroundStyle(.white.opacity(0.8))
-                    .multilineTextAlignment(.center)
-                    .padding(.bottom, 50)
+                .padding(.horizontal, 40)
+                .padding(.bottom, 32)
             }
             .padding(.horizontal, 20)
         }
+        .ignoresSafeArea(edges: .bottom)
         .fullScreenCover(isPresented: $showChallenge) {
             ChallengeView(isPresented: $showChallenge, difficulty: .medium)
         }
         .fullScreenCover(isPresented: $showInterstitial) {
             InterstitialAdView(isPresented: $showInterstitial)
         }
-        .onAppear { startTimer() }
+        .onAppear {
+            startTimer()
+            timerGlow = true
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) { pulseApps = true }
+        }
         .onDisappear { timer?.invalidate() }
     }
-    
+
     private func startTimer() {
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if timeRemaining > 0 {
                 timeRemaining -= 1
             } else {
                 timer?.invalidate()
-                // Show interstitial ad when session completes
+                FLHaptic.success()
                 showInterstitial = true
                 DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
                     isPresented = false
@@ -127,12 +138,16 @@ struct ActiveLockView: View {
             }
         }
     }
-    
+
     private func formatTime(_ seconds: TimeInterval) -> String {
         let h = Int(seconds) / 3600
         let m = (Int(seconds) % 3600) / 60
         let s = Int(seconds) % 60
-        return String(format: "%d:%02d:%02d", h, m, s)
+        if h > 0 {
+            return String(format: "%d:%02d:%02d", h, m, s)
+        } else {
+            return String(format: "%d:%02d", m, s)
+        }
     }
 }
 
